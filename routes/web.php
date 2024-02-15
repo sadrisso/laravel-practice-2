@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-use App\Http\Controllers\Customer;
+use App\Http\Controllers\CustomerDetails;
 
 /*
 |--------------------------------------------------------------------------
@@ -19,5 +19,6 @@ Route::get('/', function ()
     return view('welcome');
 });
 
-Route::get('customer/register', [Customer::class, 'index'])->name('customer.register');
-Route::post('customer/register', [Customer::class, 'store'])->name('customer.register');
+Route::get('customer/register', [CustomerDetails::class, 'index'])->name('customer.register');
+Route::post('customer/register', [CustomerDetails::class, 'store'])->name('customer.register');
+Route::get('customer/view', [CustomerDetails::class, 'view'])->name('customer.view');
