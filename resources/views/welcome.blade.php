@@ -14,13 +14,13 @@
     <nav class="navbar navbar-expand-lg navbar-light bg-light">
         <ul class="nav ">
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/')}}">Home</a>
+                <a class="nav-link" href="{{url('customer/register')}}">Register</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/')}}">View</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/')}}">Trash</a>
+                <a class="nav-link" href="{{url('/')}}">Home</a>
             </li>
         </ul>
     </nav>
