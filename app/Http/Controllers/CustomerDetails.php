@@ -32,4 +32,14 @@ class CustomerDetails extends Controller
         $customer = Customer::all();
         return view('customer-view', compact('customer'));
     }
+
+    public function delete($id)
+    {
+        $customer = Customer::find($id);
+        if(!is_null($customer))
+        {
+            $customer->delete();
+        }
+        return redirect()->back();
+    }
 }

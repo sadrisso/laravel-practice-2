@@ -22,3 +22,4 @@ Route::get('/', function ()
 Route::get('customer/register', [CustomerDetails::class, 'index'])->name('customer.register');
 Route::post('customer/register', [CustomerDetails::class, 'store'])->name('customer.register');
 Route::get('customer/view', [CustomerDetails::class, 'view'])->name('customer.view');
+Route::get('customer/delete/{id}', [CustomerDetails::class, 'delete'])->name('customer.delete');

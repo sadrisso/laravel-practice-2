@@ -17,7 +17,7 @@
                 <a class="nav-link" href="{{url('customer/register')}}">Register</a>
             </li>
             <li class="nav-item">
-                <a class="nav-link" href="{{url('/')}}">View</a>
+                <a class="nav-link" href="{{url('customer/view')}}">View</a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="{{url('/')}}">Home</a>
