@@ -23,3 +23,5 @@ Route::get('customer/register', [CustomerDetails::class, 'index'])->name('custom
 Route::post('customer/register', [CustomerDetails::class, 'store'])->name('customer.register');
 Route::get('customer/view', [CustomerDetails::class, 'view'])->name('customer.view');
 Route::get('customer/delete/{id}', [CustomerDetails::class, 'delete'])->name('customer.delete');
+Route::get('customer/edit/{id}', [CustomerDetails::class, 'edit'])->name('customer.edit');
+Route::post('customer/update/{id}', [CustomerDetails::class, 'update'])->name('customer.update');

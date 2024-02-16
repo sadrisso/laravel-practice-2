@@ -42,4 +42,30 @@ class CustomerDetails extends Controller
         }
         return redirect()->back();
     }
+
+    public function edit($id)
+    {
+        $customer = Customer::find($id);
+        if(!is_null($customer))
+        {
+            $url = url('customer/update'). '/' . $id;
+            $title = 'Update Customer Details';
+            return view('customer-form', compact('url', 'title', 'customer'));
+        }
+    }
+
+    public function update($id, Request $req)
+    {
+        $req->validate([
+            'name' => 'required',
+            'email' => 'required'
+        ]);
+
+        $customer = Customer::find($id);
+        $customer->name = $req['name'];
+        $customer->email = $req['email'];
+        $customer->save();
+
+        return redirect('customer/view');
+    }
 }

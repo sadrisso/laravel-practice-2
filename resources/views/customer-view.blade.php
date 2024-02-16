@@ -27,8 +27,8 @@
                 <td>{{$res->email}}</td>
                 <td>{{$res->password}}</td>
                 <td>
-                    <a href="{{route('customer.register')}}">Edit</a>
-                    <a href="{{route('customer.delete', ['id' => $res->id])}}">Trash</a>
+                    <a href="{{route('customer.edit', ['id' => $res->id])}}" class="btn btn-primary">Edit</a>
+                    <a href="{{route('customer.delete', ['id' => $res->id])}}" class="btn btn-danger">Trash</a>
                 </td>
             </tr>
             @endforeach
