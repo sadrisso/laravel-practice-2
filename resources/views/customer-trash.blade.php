@@ -27,15 +27,14 @@
                 <td>{{$res->email}}</td>
                 <td>{{$res->password}}</td>
                 <td>
-                    <a href="{{route('customer.edit', ['id' => $res->id])}}" class="btn btn-primary">Edit</a>
-                    <a href="{{route('customer.delete', ['id' => $res->id])}}" class="btn btn-danger">Trash</a>
+                    <a href="{{route('customer.restore', ['id' => $res->id])}}" class="btn btn-success">Restore</a>
+                    <a href="{{route('customer.forceDelete', ['id' => $res->id])}}" class="btn btn-danger">Delete</a>
                 </td>
             </tr>
             @endforeach
         </tbody>
     </table>
-    <a href="{{url('/')}}" class="form-control btn btn-dark">Home</a>
-    <a href="{{url('customer/trash')}}" class="form-control btn btn-info mt-2">Trash</a>
+    <a href="{{url('customer/view')}}" class="form-control btn btn-warning">View</a>
 
 <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.3.1/jquery.slim.min.js"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.13.0/umd/popper.min.js"></script>

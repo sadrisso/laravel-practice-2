@@ -35,11 +35,7 @@ class CustomerDetails extends Controller
 
     public function delete($id)
     {
-        $customer = Customer::find($id);
-        if(!is_null($customer))
-        {
-            $customer->delete();
-        }
+        Customer::find($id)->delete();
         return redirect()->back();
     }
 
@@ -67,5 +63,27 @@ class CustomerDetails extends Controller
         $customer->save();
 
         return redirect('customer/view');
+    }
+
+    public function trash()
+    {
+        $customer = Customer::onlyTrashed()->get();
+        return view('customer-trash', compact('customer'));
+    }
+
+    public function restore($id)
+    {
+        Customer::withTrashed()->find($id)->restore();
+        return redirect()->back();
+    }
+
+    public function force_delete($id)
+    {
+        $customer = Customer::withTrashed()->find($id);
+        if(!is_null($customer))
+        {
+            $customer->forceDelete();
+        }
+        return redirect('customer/trash');
     }
 }

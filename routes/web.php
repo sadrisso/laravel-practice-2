@@ -27,5 +27,8 @@ Route::group(['prefix' => 'customer'], function()
     Route::get('delete/{id}', [CustomerDetails::class, 'delete'])->name('customer.delete');
     Route::get('edit/{id}', [CustomerDetails::class, 'edit'])->name('customer.edit');
     Route::post('update/{id}', [CustomerDetails::class, 'update'])->name('customer.update');
+    Route::get('trash', [CustomerDetails::class, 'trash'])->name('customer.trash');
+    Route::get('restore/{id}', [CustomerDetails::class, 'restore'])->name('customer.restore');
+    Route::get('forceDelete/{id}', [CustomerDetails::class, 'force_delete'])->name('customer.forceDelete');
 });
 
