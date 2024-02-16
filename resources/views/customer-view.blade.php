@@ -11,6 +11,11 @@
 </head>
 <body class="container">
 
+    <form action="">
+        <input type="search" name="search" class="search" placeholder="Search here" value="{{$search}}">
+        <input type="submit" class="btn btn-light" value="Search">
+    </form>
+
     <table class="table">
         <thead>
             <tr>

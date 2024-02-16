@@ -27,10 +27,15 @@ class CustomerDetails extends Controller
         return redirect('customer/view');
     }
 
-    public function view()
+    public function view(Request $req)
     {
-        $customer = Customer::all();
-        return view('customer-view', compact('customer'));
+        $search = $req['search'] ?? '';
+        if($search != ''){
+            $customer = Customer::where('name', 'LIKE', "%$search%")->orWhere('email', 'LIKE', "%$search%")->get();
+        }else{
+            $customer = Customer::all();
+        }
+        return view('customer-view', compact('customer', 'search'));
     }
 
     public function delete($id)
